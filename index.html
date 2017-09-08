@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>demo</title>
+  </head>
+  <body>
+    <svg id="radial_canvas" class="radial_canvas"></svg>
+    <script src="https://cdn.bootcss.com/snap.svg/0.5.1/snap.svg-min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="build/main.js"></script>
+    <script>
+      var clientWidth = window.document.body.clientWidth;
+      var clientHeight = window.document.body.clientHeight;
+      var x_radius = 200;
+      var x_width = 90;
+      var x_fillet = 10;
+
+      if (clientWidth < 738) {
+        x_width = 56;
+        x_fillet = 6;
+        x_radius = (clientWidth > clientHeight ? clientHeight : clientWidth )/2 - x_width - 20;
+        if (x_radius > 500) {
+          x_radius = 500;
+        }
+      }
+
+      new RadialNav(
+        document.getElementById('radial_canvas'), {
+          width: x_width,
+          fillet: x_fillet,
+          radius: x_radius,
+          childs: [
+            { label: '产品概览', icon: '\ue666', link: '?/overview' },
+            { label: '产品中心', icon: '\ue662', link: '?/products', exact: true },
+            { label: '产品中心', icon: '\ue662', link: '?/products', exact: true },
+            { label: '产品中心', icon: '\ue662', link: '?/products', exact: true },
+            { label: '产品中心', icon: '\ue662', link: '?/products', exact: true }
+          ],
+          onClick: function(event, nav) {
+            window.location.href = nav.link;
+          }
+        });
+    </script>
+  </body>
+</html>
