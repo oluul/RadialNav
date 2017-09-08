@@ -86,7 +86,7 @@ class RadialNav {
           "pointer-events": "none",
           fill: '#fff'
         }).textPath.attr({
-          class: 'iconfont',
+          class: 'radial_nav_iconfont',
           "startOffset": "50%",
           "alignment-baseline": "middle"
         });

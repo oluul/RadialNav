@@ -33,11 +33,11 @@
           fillet: x_fillet,
           radius: x_radius,
           childs: [
-            { label: '产品概览', icon: '\ue666', link: '?/overview' },
-            { label: '产品中心', icon: '\ue662', link: '?/products', exact: true },
-            { label: '产品中心', icon: '\ue662', link: '?/products', exact: true },
-            { label: '产品中心', icon: '\ue662', link: '?/products', exact: true },
-            { label: '产品中心', icon: '\ue662', link: '?/products', exact: true }
+            { label: '产品', icon: '\ue6ab', link: '/#!/products' },
+            { label: '选型', icon: '\ue850', link: '/#!/selection', exact: true },
+            { label: '资料', icon: '\ue604', link: '/#!/downloads', exact: true },
+            { label: '资讯', icon: '\ue600', link: '/#!/articles', exact: true },
+            { label: '登录', icon: '\ue6cb', link: 'http://elesa-ganter.yangben.io/signin/#!/', exact: true }
           ],
           onClick: function(event, nav) {
             window.location.href = nav.link;
